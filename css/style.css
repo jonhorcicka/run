@@ -150,7 +150,8 @@ a {
 }
 
 .main-image {
-  width: 50%;
+  max-width: 887px;
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: left;
@@ -211,7 +212,7 @@ a {
 .offer-bg {
   position: relative;
   background-image: url(../img/bg_2.jpeg);
-  background-size: 100% 702px;
+  background-size: 96% 702px;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -252,7 +253,7 @@ a {
 }
 
 .sale-header {
-  width: 1730px;
+  width: 1840px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -272,6 +273,10 @@ a {
   justify-content: center;
 }
 
+.slider-sale1 {
+  display: flex;
+}
+
 .sale-card1 {
   display: grid;
   box-sizing: border-box;
@@ -283,6 +288,11 @@ a {
   width: 848px;
   height: 514px;
   margin-bottom: 250px;
+  margin-left: 20px;
+}
+.sale-card1__text {
+  display: flex;
+  flex-direction: column;
 }
 .sale-card1__title {
   display: block;
@@ -294,8 +304,8 @@ a {
 .sale-card1__subtitle {
   font-size: 22px;
   color: rgba(0, 0, 0, 0.65);
-  margin-left: 64px;
-  margin-top: -65px;
+  padding-left: 64px;
+  margin-bottom: 55px;
 }
 .sale-card1__button {
   box-sizing: border-box;
@@ -349,6 +359,10 @@ a {
   padding: 16px 16px;
 }
 
+.slider-sale2 {
+  display: flex;
+}
+
 .sale-card2 {
   display: grid;
   box-sizing: border-box;
@@ -359,8 +373,12 @@ a {
   border-radius: 40px;
   width: 848px;
   height: 514px;
-  margin-left: 32px;
+  margin-left: 20px;
   margin-bottom: 250px;
+}
+.sale-card2__text {
+  display: flex;
+  flex-direction: column;
 }
 .sale-card2__title {
   display: block;
@@ -373,7 +391,7 @@ a {
   font-size: 22px;
   color: rgba(0, 0, 0, 0.65);
   margin-left: 64px;
-  margin-top: -65px;
+  margin-bottom: 95px;
 }
 .sale-card2__button {
   box-sizing: border-box;
@@ -434,20 +452,16 @@ a {
 
 .clients-block {
   display: flex;
-  justify-content: space-between;
 }
 
 .clients-container {
   display: flex;
-  flex: 1 0 33%;
-  justify-content: end;
-  margin: 0 65px;
 }
 
 .clients-text__title {
   font-size: 96px;
   margin-bottom: 390px;
-  margin-top: 0;
+  margin-top: 70px;
 }
 .clients-text__subtitle {
   color: rgba(0, 0, 0, 0.65);
@@ -466,6 +480,7 @@ a {
 .clients-text1__title {
   font-size: 36px;
   margin-bottom: 55px;
+  margin-top: 90px;
 }
 .clients-text1__subtitle {
   font-size: 22px;
@@ -474,14 +489,15 @@ a {
 .clients-icon__arrows {
   display: flex;
   column-gap: 20px;
-  margin-top: 55px;
-  margin-bottom: 270px;
+  margin-top: 65px;
+  margin-bottom: 300px;
 }
 
-.clients-image {
-  position: relative;
-  height: 791px;
-  bottom: 80px;
+.slider-clients {
+  display: flex;
+  flex-direction: row;
+  width: 472px;
+  margin: 0 135px 0 323px;
 }
 
 .footer {
