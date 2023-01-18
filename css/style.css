@@ -43,6 +43,7 @@ button:hover {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 .menu {
@@ -90,6 +91,59 @@ a {
 }
 .header__icons {
   padding-right: 95px;
+}
+
+.dropdown {
+  position: relative;
+  width: 160px;
+}
+.dropdown__face, .dropdown__items {
+  background-color: blue;
+  padding: 20px;
+  border-radius: 25px;
+}
+.dropdown__face {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+.dropdown__text {
+  color: #fff;
+  margin-left: 10px;
+}
+.dropdown__items {
+  color: #fff;
+  line-height: 55px;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 100%;
+  list-style: none;
+  list-style-type: none;
+  justify-content: space-between;
+  visibility: hidden;
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
+}
+.dropdown__items::before {
+  content: "";
+  background-color: #blue;
+  position: absolute;
+  bottom: 100%;
+  right: 20%;
+  height: 40px;
+  width: 20px;
+}
+
+input {
+  display: none;
+}
+input:checked ~ .dropdown__items {
+  top: calc(100% + 25px);
+  visibility: visible;
+  opacity: 1;
 }
 
 .main-block {

@@ -18,14 +18,39 @@
             <div class="header__logo">
                <a href="#"><img src="./img/logo.png" alt="Logo společnosti"></a>
             </div>
-            <div class="header__menu">
+            <!-- <div class="header__menu">
                <button class="menu">
                   <span class="header__button">
                      <img src="./img/iconMenu.png" alt="Menu">Menu</span>
                </button>
 
 
-            </div>
+            </div> -->
+            <!-- Zkouska Dropdown Menu -->
+            <div class="dropdown">
+               <input type="checkbox" id="dropdown">
+             
+               <label class="dropdown__face" for="dropdown">
+                  <img src="./img/iconMenu.png" alt="">
+                 <div class="dropdown__text">Menu</div>
+             
+                 <div class="dropdown__arrow"></div>
+               </label>
+      
+               <ul class="dropdown__items">
+                 <li> <a id="sec-1" href="#one">Proč My</a></li>
+                 <li> <a id="sec-2" href="#two">V prodeji</a></li>
+                 <li> <a id="sec-3" href="#three">Klienti říkají</a></li>
+               </ul>
+             </div>
+
+             <!-- <svg>
+               <filter id="goo">
+                 <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                 <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                 <feBlend in="SourceGraphic" in2="goo" />
+               </filter>
+             </svg> -->
 
             <!-- <button class="menu-button ">
                <span class="sale-card1__button-text">
@@ -107,7 +132,7 @@
                <div class="offer-bg">
                   <img class="offer-bg__plus" src="./img/plus.svg" alt="Plus">
                   <img class="offer-bg__binocular" src="./img/binocular.svg" alt="Dalekohled">
-                  <h2 class="offer-bg__title">Proč my</h2>
+                  <h2 id="one" class="offer-bg__title">Proč my</h2>
 
                   <div class="offer-wrap">
                      <span class="offer-subtitle" ><img class="offer-items" src="./img/delivery.png" alt="Mapa"> <br> Rychlost objednávky — 
@@ -143,7 +168,7 @@
       <section class="sale">
          <div class="container">
                <div class="sale-header">
-                  <h2 class="sale-header__title">V prodeji</h2>
+                  <h2 id="two" class="sale-header__title">V prodeji</h2>
                      <span class="sale-header__icons">
                         <a href="#" class="arrows__left"><img src="./img/sliderBlackLeft.png" alt="Doleva"></a>
                         <a href="#" class="arrows__right"><img src="./img/sliderBlackRight.png" alt="Doprava"></a>
@@ -283,7 +308,7 @@
          <div class="container">
             <div class="clients-block">
                <div class="clients-text">
-                  <h3 class="clients-text__title">Klienti <br> říkají</h3>
+                  <h3 id="three" class="clients-text__title">Klienti <br> říkají</h3>
                   <span class="clients-text__subtitle">Model</span> <br>
                   <h3 class="clients-text__subtitle1">KugoSun 08</h3>
                </div>
