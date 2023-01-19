@@ -126,7 +126,7 @@ a {
   list-style-type: none;
   justify-content: space-between;
   visibility: hidden;
-  z-index: 1;
+  z-index: 2;
   opacity: 1;
   transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
 }
@@ -179,7 +179,7 @@ input:checked ~ .dropdown__items {
 }
 .main-text {
   position: relative;
-  width: 50%;
+  width: 30%;
 }
 .main-text__title {
   font-size: 128px;
@@ -250,9 +250,9 @@ input:checked ~ .dropdown__items {
   z-index: -1;
 }
 .main-image__battery {
-  position: relative;
+  position: absolute;
   top: 495px;
-  right: 715px;
+  right: 225px;
   width: 400px;
   z-index: 1;
 }
