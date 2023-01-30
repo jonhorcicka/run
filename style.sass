@@ -5,16 +5,27 @@
 *
     box-sizing: border-box
 
+
+// *,html,body
+//     font-size:50%
+
 body
     @include light
     background-color: $body-color
+    overflow-y: scroll
+    
+
+        
+
 
 body,
 button
     font-family: $body-font
     font-size: $normal-font-size
 
-img
+img, 
+iframe
+    max-width: 100%
     height: auto
 button
     cursor: pointer
@@ -26,6 +37,8 @@ button
 a
     text-decoration: none
     color: #fff
+    @media (max-width: 767px)
+        margin-left: 5px
     
 
 .menu
@@ -50,13 +63,15 @@ a
 .header-block
     display: flex
     justify-content: space-between
-
+    @media (max-width: 767px)
+        
 .header
     padding-top: 70px
     &__logo
         // padding-left: 95px
     &__menu
         padding-right: 500px
+            
     &__button
         font-size: $normal-font-size
         color: #fff
@@ -69,6 +84,9 @@ a
         justify-content: space-between
     &__icons
         padding-right: 95px
+        @media (max-width: 767px)
+            display: none
+            
 
 .dropdown 
     position: relative
@@ -110,7 +128,7 @@ a
 
         &::before 
             content: ""
-            background-color: #blue
+            // background-color: blue
             position: absolute
             bottom: 100%
             right: 20%
@@ -149,21 +167,35 @@ input
         
 // Hlavní sekce       
 .main-block
-    display: flex 
+    display: flex
+    @media (max-width: 767px)
+        display: block
+        flex-direction: column
+     
 .main
     &__subtitle
         font-size: $normal-font-size
         display: block
         padding-bottom: 145px
+        @media (max-width: 767px)
+            padding-bottom: 60px
+            
+        
    
     &-text
         position: relative
-        width: 30% 
+        width: 30%
+        @media (max-width: 767px)
+            width: 100% 
         &__title
             font-size: $big-font-size
             line-height: $big-font-size
             margin-bottom: 65px
             display: block
+            @media (max-width: 767px)
+                font-size: 64px
+                line-height: normal
+                margin-bottom: 30px
         &__list
             display: flex
             flex-direction: column
@@ -173,6 +205,8 @@ input
     display: flex
     align-items: center
     justify-content: flex-start
+    @media (max-width: 767px)
+        flex-direction: column
     &__button
         background: #093CB5
         color: #fff
@@ -184,6 +218,11 @@ input
         display: block
         font-size: $normal-font-size
         margin-right: 50px
+        @media (max-width: 767px)
+            margin-right: 0
+            font-size: 18px
+            min-width: 267px
+            
             
     &__phone
         text-align: center
@@ -196,18 +235,28 @@ input
         padding-left: 39px
         position: relative
         right: 25px
+        @media (max-width: 767px)
+            flex: 0 0 100px
+            font-size: 18px
 
 .phone
     margin-right: 12px
 
 .main-image
-    max-width: 887px
+    max-width: 1200px
     width: 100%
     display: flex
     align-items: flex-start
     justify-content: left
     position: relative
-    min-width: 1200px
+    min-width: 887px
+    @media (max-width: 767px)
+        flex-direction: column-reverse
+        width: 50%
+        margin-left: 40px
+        order: 1
+        
+    
     &__fast
         display: block
         position: relative
@@ -215,19 +264,32 @@ input
         left: 235px
         z-index: 1
         width: 400px
+        @media (max-width: 767px)
+            top: -435px
+            left: -85px
+            width: 25%
     &__bgNinebot
         // display: block
         position: relative
         bottom: 145px
-        height: 1115px
+        // height: 1115px
         width: 100%
         z-index: -1
+        @media (max-width: 767px)
+            flex-direction: column-reverse
+            width: 50%
+            bottom: 0
     &__battery
         position: absolute
         top: 495px
         right: 225px
         width: 400px
         z-index: 1
+        @media (max-width: 767px)
+            // flex-direction: column
+            top: 669px
+            right: 580px
+            width: 25%
     
 .main-card
     position: absolute
@@ -236,10 +298,14 @@ input
     background-size: cover
     z-index: 1
     top: 185px
-    right: 83px
+    right: 35px
     width: 294px
     height: 294px
     border-radius: 32px
+    @media (max-width: 767px)
+        position: unset
+        margin-bottom: 50px
+        order: 1
     &__title
         color: #fff
         font-size: $span-font-size
@@ -256,38 +322,78 @@ input
 // Nabídková sekce
 .offer-bg
     position: relative
-    background-image: url(../img/bg_2.jpeg)
+    background: url(../img/bg_2.jpeg) 
     background-size: 96% 702px
+    background-position: center
+    width: 100%
     background-repeat: no-repeat
     display: flex
     flex-direction: column
     justify-content: space-between
     height: 702px
     border-radius: 100px
+    @media ( max-width: 767px)
+        background: url(../img/bg_90.jpeg) no-repeat 
+        z-index: 6
+        width: 100%
+        height: 100%
+        
+        // height: 1400px
+        
+        //      background: none
+        //      background-size: 100% 100%
+        // :before
+        //     content: ""
+        //     background-image: url(../img/bg_2.jpeg) no-repeat
+        //     width: 100%
+        //     height: 1400px
+        //     display: block
+
+        
+        
     &__plus
         position: absolute
         padding-left: 50%
         border-radius: 100px
-
-    // &__plus
-    //     width: 366px
-    //     height: 366px
-    //     background-image: url(../img/plus.svg)
-    //     background-position: center
+        @media (max-width: 767px)
+            padding-left: 0
+            margin-top: 350px
+            transform: rotate(90deg)
+            width: 45%
+            margin-left: 218px
+            border-radius: 0
+            
     &__binocular
         position: absolute
         padding-left: 83%
         padding-top: 50px
+        @media (max-width: 767px)
+            padding-top: 0
+            padding-left: 0
+            width: 22%
+            margin: 535px 0 0 260px
+        
     &__title
         color: #fff
         padding: 110px 0 0 115px
         font-size: $h2-font-size
         margin: 0px
+        @media (max-width: 767px)
+            font-size: 64px
+            padding: 80px 0 30px 0
+            justify-content: center
+            display: flex
+            
 
 .offer-wrap
     display: flex
     align-items: flex-start
-    margin: 0 115px 115px   
+    margin: 0 115px 115px
+    @media (max-width: 767px)
+        flex-direction: column
+        margin: 0 30px 115px
+        align-items: center
+           
 
 .offer-subtitle
     display: block
@@ -297,6 +403,14 @@ input
     width: 30%
     min-width: 500px
     // padding: 115px 0px 0px 115px
+    @media (max-width: 767px)
+        font-size: 22px
+        display: contents
+        justify-content: space-between
+        
+        
+       
+    
 
 // Prodejova sekce
 .sale-header
@@ -304,22 +418,38 @@ input
     display: flex
     justify-content: space-between
     align-items: baseline
+    @media (max-width: 767px)
+        flex-direction: column
     &__title
         font-size: $h2-font-size
         margin-bottom: 130px
         margin-top: 250px
+        @media (max-width: 767px)
+            margin: 25px
+            font-size: 64px
+        
     &__icons
         display: flex
         column-gap: 25px
+        @media (max-width: 767px)
+            margin-bottom: 50px
 
 .sale-main
     display: flex
-    justify-content: center
+    // width:8%
+    
+    margin: 0 auto
+    @media (max-width: 767px)
+        flex-direction: column-reverse
+        overflow: hidden
+
 .slider-sale1
     display: flex
     // justify-content: center
+    @media (max-width: 767px)
+        // flex-direction: column
 .sale-card1
-    display: grid
+    display: flex
     box-sizing: border-box
     position: relative
     border: 1px solid rgba(0, 0, 0, 0.03)
@@ -330,9 +460,14 @@ input
     height: 514px
     margin-bottom: 250px
     margin-left: 20px
+    @media (max-width: 767px)
+        // flex-direction: column
+        //  width: 100%
+        width: 50%
     &__text
         display: flex
         flex-direction: column
+        width: 50%
     &__title
         display: block
         font-size: $span-font-size
@@ -367,11 +502,11 @@ input
         font-size: $span-font-size
         color: #FFFFFF
     &__img
-        position: absolute
-        padding-left: 470px
+        // position: absolute
+        // padding-left: 470px
     &__info
         display: flex
-        position: absolute
+        position: relative
         justify-content: flex-end
         box-sizing: border-box
         border-radius: 20px
@@ -379,7 +514,7 @@ input
         box-shadow: 0px 100px 80px rgba(155, 161, 167, 0.07), 0px 41.7776px 33.4221px rgba(155, 161, 167, 0.0503198), 0px 22.3363px 17.869px rgba(155, 161, 167, 0.0417275), 0px 12.5216px 10.0172px rgba(155, 161, 167, 0.035), 0px 6.6501px 5.32008px rgba(155, 161, 167, 0.0282725), 0px 2.76726px 2.21381px rgba(155, 161, 167, 0.0196802)
         width: 80px
         height: 62px
-        margin-left: 720px
+        // margin-left: 720px
         margin-top: 55px
         &-text
             color: #fff
@@ -392,17 +527,21 @@ input
     display: flex
     // justify-content: center
 .sale-card2
-    display: grid
+    display: flex
     box-sizing: border-box
     position: relative
     border: 1px solid rgba(0, 0, 0, 0.03)
     background: #FBFBFB
     box-shadow: 0px 25px 50px rgba(155, 161, 167, 0.1997)
     border-radius: 40px
-    width: 848px
+    width: 848px 
     height: 514px
     margin-left: 20px
     margin-bottom: 250px
+    @media (max-width: 767px)
+        // flex-direction: column
+        // width: 50%
+        // width: 100%
     &__text
         display: flex
         flex-direction: column
@@ -469,23 +608,35 @@ input
 .clients-block
     display: flex
     // justify-content: center
+    @media (max-width: 767px)
+        flex-direction: column-reverse
+
 .clients-container
     display: flex
     // flex: 1 0 33%
     // // justify-content: end
     // margin: 0 65px
 .clients-text
+    @media (max-width: 767px)
+        order: 1
     &__title
         font-size: $h2-font-size
         margin-bottom: 390px
         margin-top: 70px
+        @media (max-width: 767px)
+            margin-bottom: 30px
+            
     &__subtitle
         color: rgba(0, 0, 0, 0.65)
         font-size: $normal-font-size
+        @media (max-width: 767px)
+            
     &__subtitle1
         font-size: $span-font-size
         margin-top: 8px
         margin-bottom: 320px
+        @media (max-width: 767px)
+            margin-bottom: 30px
 
 #lowColor
     color: #00000073
@@ -495,6 +646,10 @@ input
         font-size: $span-font-size
         margin-bottom: 55px
         margin-top: 90px
+        @media (max-width: 767px)
+            margin: 20px 0 10px
+            
+
     &__subtitle
         font-size: $normal-font-size
     
@@ -505,8 +660,13 @@ input
         column-gap: 20px
         margin-top: 65px
         margin-bottom: 300px
+        @media (max-width: 767px)
+            margin: 10px 0 25px
+            order: 4
 
 .clients-image
+    @media (max-width: 767px)
+        width: 75%
     // position: relative
     // height: 791px
     // bottom: 80px
@@ -516,6 +676,8 @@ input
    flex-direction: row
    width: 472px
    margin: 0 135px 0 323px
+   @media (max-width: 767px)
+        margin: 30px 0  0
     
 
 // Patičková sekce
@@ -525,6 +687,8 @@ input
 .footer-wrap
     display: flex
     justify-content: space-between
+    @media (max-width: 767px)
+            flex-direction: column-reverse
     
 .footer-block
     ul
@@ -539,18 +703,27 @@ input
     margin-bottom: 175px
     margin-top: 85px
     margin-left: 80px
+    @media (max-width: 767px)
+        margin-left: 10px 
+        margin-bottom: 40px
+        margin-top: 30px
 .footer-copyright
     margin-bottom: 85px
     color:  #00000059 
     opacity: 35%
     +light 
+    @media (max-width: 767px)
+        margin-bottom: 40px
     &--1
-        margin-bottom: 85px
         margin-bottom: 85px
         color:  #00000059 
         opacity: 35%
         +light 
         margin-left: 80px
+        @media (max-width: 767px)
+            margin-left: 10px
+            margin-bottom: 40px
+
         
     
         
@@ -559,6 +732,8 @@ input
     +bold
     margin-bottom: 32px
     margin-top: 85px
+    @media (max-width: 767px)
+        margin-top: 30px
 
     &__socials
         display: flex
@@ -568,6 +743,12 @@ input
         flex-wrap: wrap
         flex-direction: row
         padding-inline-start: 0
+        @media (max-width: 767px)
+            justify-content: start
+       
+            
+            
+        
 
 
 
