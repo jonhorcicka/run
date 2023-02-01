@@ -12,11 +12,8 @@
 body
     @include light
     background-color: $body-color
-    overflow-y: scroll
+    // overflow-y: scroll
     
-
-        
-
 
 body,
 button
@@ -58,15 +55,18 @@ a
     max-width: 1920px
     width: 96%
     margin: 0 auto
+    
 
 // Hlavíčková sekce    
 .header-block
     display: flex
     justify-content: space-between
-    @media (max-width: 767px)
         
 .header
     padding-top: 70px
+    @media ( max-width: 768px)
+        padding-top: 50px
+        
     &__logo
         // padding-left: 95px
     &__menu
@@ -82,6 +82,7 @@ a
         display: flex
         align-items: center
         justify-content: space-between
+        
     &__icons
         padding-right: 95px
         @media (max-width: 767px)
@@ -134,6 +135,20 @@ a
             right: 20%
             height: 40px
             width: 20px
+        @media (max-width: 768px)
+            line-height: 40px
+            padding-left: 10px
+            &::before 
+                content: ""
+            // background-color: blue
+                position: absolute
+                bottom: 100%
+                right: 20%
+                height: 40px
+                width: 20px
+            
+            
+        
 
 .drop
     &:hover
@@ -179,6 +194,7 @@ input
         padding-bottom: 145px
         @media (max-width: 767px)
             padding-bottom: 60px
+           
             
         
    
@@ -220,7 +236,6 @@ input
         margin-right: 50px
         @media (max-width: 767px)
             margin-right: 0
-            font-size: 18px
             min-width: 267px
             
             
@@ -237,7 +252,7 @@ input
         right: 25px
         @media (max-width: 767px)
             flex: 0 0 100px
-            font-size: 18px
+            
 
 .phone
     margin-right: 12px
@@ -251,10 +266,12 @@ input
     position: relative
     min-width: 887px
     @media (max-width: 767px)
-        flex-direction: column-reverse
-        width: 50%
-        margin-left: 40px
-        order: 1
+        display: block
+        width: 100%
+        // left: 80px
+        width: auto
+        min-width: 0
+        
         
     
     &__fast
@@ -265,9 +282,9 @@ input
         z-index: 1
         width: 400px
         @media (max-width: 767px)
-            top: -435px
-            left: -85px
-            width: 25%
+            top: 435px
+            left: -30px
+            width: 50%
     &__bgNinebot
         // display: block
         position: relative
@@ -276,10 +293,12 @@ input
         width: 100%
         z-index: -1
         @media (max-width: 767px)
-            flex-direction: column-reverse
-            width: 50%
-            bottom: 0
+            width: 85%
+            top: 250px
+            left: 60px
+            display: block
     &__battery
+        display: block
         position: absolute
         top: 495px
         right: 225px
@@ -287,9 +306,12 @@ input
         z-index: 1
         @media (max-width: 767px)
             // flex-direction: column
-            top: 669px
-            right: 580px
-            width: 25%
+            width: 50%
+            position: initial 
+            display: block
+            margin-left: 120px
+            padding-top: 85px
+            
     
 .main-card
     position: absolute
@@ -303,18 +325,25 @@ input
     height: 294px
     border-radius: 32px
     @media (max-width: 767px)
-        position: unset
-        margin-bottom: 50px
-        order: 1
+        position: relative
+        top: -600px
+        display: block
+        right: 0
+        margin-top: -80px
+        
+
     &__title
         color: #fff
         font-size: $span-font-size
         margin: 32px 32px 16px 32px
-        @include bold 
+        @include bold
+        @media (max-width: 767px) 
+            padding-top: 30px
     &__subtitle
         color: #FFFFFFA6
         font-size: $normal-font-size
         margin: 0 0 45px 32px
+        
     &__arrows
         margin: -10px 0 0 30px
         
@@ -357,21 +386,30 @@ input
         border-radius: 100px
         @media (max-width: 767px)
             padding-left: 0
-            margin-top: 350px
+            // margin-top: 350px
             transform: rotate(90deg)
             width: 45%
-            margin-left: 218px
+            // margin-left: 218px
             border-radius: 0
+            max-width: 122px
+            display: block
+            width: auto
+            top: 360px
+            left: 252px
+
             
     &__binocular
         position: absolute
         padding-left: 83%
         padding-top: 50px
         @media (max-width: 767px)
-            padding-top: 0
-            padding-left: 0
+            position: relative
             width: 22%
-            margin: 535px 0 0 260px
+            // margin: 535px 0 0 260px
+            top: 530px
+            left: 260px
+            padding-left: 0
+            padding-top: 0
         
     &__title
         color: #fff
@@ -380,7 +418,7 @@ input
         margin: 0px
         @media (max-width: 767px)
             font-size: 64px
-            padding: 80px 0 30px 0
+            padding: 0px 0 30px 0
             justify-content: center
             display: flex
             
@@ -419,7 +457,8 @@ input
     justify-content: space-between
     align-items: baseline
     @media (max-width: 767px)
-        flex-direction: column
+        display: block
+        width: auto
     &__title
         font-size: $h2-font-size
         margin-bottom: 130px
@@ -433,6 +472,7 @@ input
         column-gap: 25px
         @media (max-width: 767px)
             margin-bottom: 50px
+            column-gap: 10px
 
 .sale-main
     display: flex
@@ -441,7 +481,6 @@ input
     margin: 0 auto
     @media (max-width: 767px)
         flex-direction: column-reverse
-        overflow: hidden
 
 .slider-sale1
     display: flex
@@ -461,23 +500,38 @@ input
     margin-bottom: 250px
     margin-left: 20px
     @media (max-width: 767px)
-        // flex-direction: column
-        //  width: 100%
-        width: 50%
+        // position: relative
+        // display: table
+        // // flex-direction: column
+        // //  width: 100%
+        // width: 50%
+        // width: auto
+        height: 600px
+        margin-bottom: 40px
     &__text
         display: flex
         flex-direction: column
         width: 50%
+        @media (max-width: 767px)
+            width: 25%
     &__title
         display: block
         font-size: $span-font-size
         @include bold
         margin: 64px 0 32px 64px
+        @media (max-width: 767px)
+            width: 50%
+            margin: 30px 0 10px 30px
+            font-size: 22px
     &__subtitle
         font-size: $normal-font-size
         color: rgba(0, 0, 0, 0.65)
         padding-left: 64px
         margin-bottom: 55px
+        @media (max-width: 767px)
+            width: 267px
+            padding-left: 30px
+            font-size: 18px
     &__button
         box-sizing: border-box
         display: flex
@@ -490,20 +544,36 @@ input
         width: 221px
         height: 128px
         margin-left: 64px
+        @media (max-width: 767px)
+            align-items: center
+            height: 110px
+            width: 185px
+            margin-left: 65px
+            margin-top: 230px
+        
     &__button-bag
         margin-right: 8px
+        
     &__button-text
         color: #fff
         font-size: $icon-font-size
         display: flex
         justify-content: flex-end
         align-items: center
+        
     &__button-price
         font-size: $span-font-size
         color: #FFFFFF
+        @media (max-width: 767px)
+            font-size: 22px
+        
     &__img
         // position: absolute
         // padding-left: 470px
+        @media (max-width: 767px)
+            width: 50%
+            position: relative
+            top: 30px
     &__info
         display: flex
         position: relative
@@ -516,12 +586,22 @@ input
         height: 62px
         // margin-left: 720px
         margin-top: 55px
+        @media (max-width: 767px)
+            position: relative
+            width: 72px
+            height: 55px
+            // left: 251px
+            // bottom: 820px
         &-text
             color: #fff
             font-size: $normal-font-size
             text-align: center
             display: block
             padding: 16px 16px
+            @media (max-width: 767px)
+                font-size: 18px
+
+
 
 .slider-sale2
     display: flex
@@ -542,19 +622,34 @@ input
         // flex-direction: column
         // width: 50%
         // width: 100%
+        height: 600px
+        margin-bottom: 40px
     &__text
         display: flex
         flex-direction: column
+        width: 50%
+        @media (max-width: 767px)
+            width: 25%
     &__title
         display: block
         font-size: $span-font-size
         @include bold
         margin: 64px 0 32px 64px
+        @media (max-width: 767px)
+            width: 50%
+            margin: 30px 0 10px 30px
+            font-size: 22px
+
     &__subtitle
         font-size: $normal-font-size
         color: rgba(0, 0, 0, 0.65)
         margin-left: 64px
-        margin-bottom: 95px
+        margin-bottom: 55px
+        @media (max-width: 767px)
+            width: 267px
+            margin-left: 30px
+            font-size: 18px
+ 
     &__button
         box-sizing: border-box
         display: flex
@@ -567,23 +662,38 @@ input
         width: 221px
         height: 128px
         margin-left: 64px
+        @media (max-width: 767px)
+            align-items: center
+            height: 110px
+            width: 185px
+            margin-left: 65px
+            margin-top: 230px
+
     &__button-bag
         margin-right: 8px
+
     &__button-text
         color: #fff
         font-size: $icon-font-size
         display: flex
         justify-content: flex-end
         align-items: center
+
     &__button-price
         font-size: $span-font-size
         color: #FFFFFF
+        @media (max-width: 767px)
+            font-size: 22px
     &__img
-        position: absolute
-        padding-left: 470px
+        // position: absolute
+        // padding-left: 470px
+        @media (max-width: 767px)
+            width: 50%
+            position: relative
+            top: 30px
     &__info
         display: flex
-        position: absolute
+        position: relative
         justify-content: flex-end
         box-sizing: border-box
         border-radius: 20px
@@ -591,14 +701,21 @@ input
         box-shadow: 0px 100px 80px rgba(155, 161, 167, 0.07), 0px 41.7776px 33.4221px rgba(155, 161, 167, 0.0503198), 0px 22.3363px 17.869px rgba(155, 161, 167, 0.0417275), 0px 12.5216px 10.0172px rgba(155, 161, 167, 0.035), 0px 6.6501px 5.32008px rgba(155, 161, 167, 0.0282725), 0px 2.76726px 2.21381px rgba(155, 161, 167, 0.0196802)
         width: 80px
         height: 62px
-        margin-left: 720px
+        // margin-left: 720px
         margin-top: 55px
+        @media (max-width: 767px)
+            position: relative
+            width: 72px
+            height: 55px
         &-text
             color: #fff
             font-size: $normal-font-size
             text-align: center
             display: block
             padding: 16px 16px
+            @media (max-width: 767px)
+                font-size: 18px
+            
 .sale-card
     &__button
         position: relative
@@ -625,18 +742,19 @@ input
         margin-top: 70px
         @media (max-width: 767px)
             margin-bottom: 30px
+            font-size: 64px
             
     &__subtitle
         color: rgba(0, 0, 0, 0.65)
         font-size: $normal-font-size
-        @media (max-width: 767px)
-            
+  
     &__subtitle1
         font-size: $span-font-size
         margin-top: 8px
         margin-bottom: 320px
         @media (max-width: 767px)
             margin-bottom: 30px
+            font-size: 27px
 
 #lowColor
     color: #00000073
@@ -648,11 +766,11 @@ input
         margin-top: 90px
         @media (max-width: 767px)
             margin: 20px 0 10px
+            font-size: 27px
             
 
     &__subtitle
         font-size: $normal-font-size
-    
 
 .clients-icon
     &__arrows
@@ -666,7 +784,7 @@ input
 
 .clients-image
     @media (max-width: 767px)
-        width: 75%
+        width: 100%
     // position: relative
     // height: 791px
     // bottom: 80px
@@ -678,6 +796,7 @@ input
    margin: 0 135px 0 323px
    @media (max-width: 767px)
         margin: 30px 0  0
+        width: 100%
     
 
 // Patičková sekce
@@ -734,6 +853,7 @@ input
     margin-top: 85px
     @media (max-width: 767px)
         margin-top: 30px
+
 
     &__socials
         display: flex
